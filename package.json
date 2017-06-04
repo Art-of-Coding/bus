@@ -1,6 +1,6 @@
 {
-  "name": "bus",
-  "version": "0.0.1-alpha",
+  "name": "@art-of-coding/bus",
+  "version": "0.0.1-alpha.1",
   "private": true,
   "description": "MQTT message bus",
   "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MichielvdVelde/bus.git"
+    "url": "git+https://github.com/Art-of-Coding/bus.git"
   },
   "bugs": {
-    "url": "https://github.com/MichielvdVelde/bus/issues"
+    "url": "https://github.com/Art-of-Coding/bus/issues"
   },
-  "homepage": "https://github.com/MichielvdVelde/bus#readme",
+  "homepage": "https://github.com/Art-of-Coding/bus#readme",
   "dependencies": {
     "@types/node": "^7.0.27",
     "mqtt": "^2.8.1"
