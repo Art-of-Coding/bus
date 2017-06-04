@@ -1,7 +1,6 @@
 {
   "name": "@art-of-coding/bus",
   "version": "0.0.1-alpha.1",
-  "private": true,
   "description": "MQTT message bus",
   "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
   "license": "MIT",

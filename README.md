@@ -3,13 +3,16 @@
 **bus** provides a high-level way to work with MQTT. Under the hood it uses
 the excellent [MQTT.js](https://github.com/mqttjs/MQTT.js) module.
 
-This module is written using TypeScript. It is currently a work-in-progress and
-as such is not published on npm (yet). This documentation will be updated
-accordingly.
+This module is written using TypeScript. It is currently a work-in-progres.
+This documentation will be updated accordingly.
+
+## Install
+
+```bash
+npm i @art-of-coding/bus
+```
 
 ## Quick Example
-
-> These examples assume you have downloaded the files directly or cloned this repo
 
 ### Instantiating, connecting and subscribing
 
