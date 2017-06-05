@@ -179,7 +179,7 @@ by using its `label`. For more on topic patterns, [see the mqtt-regex readme](ht
 <a name="removepattern"></a>
 ### bus.removePattern (label: string): Bus
 
-Renoves a topic pattern with the given label.
+Removes a topic pattern with the given label.
 
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
