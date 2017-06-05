@@ -29,8 +29,6 @@ npm install @art-of-coding/bus
 ## Example
 
 This basic example shows how to use the basic functionality.
-The example is written in TypeScript, but this module can also be used in
-vanilla JS.
 
 ```ts
 import { Bus } from '@art-of-coding/bus'
@@ -62,7 +60,7 @@ bus.connect().then(() => {
 
   // Publish a config update on the same pattern
   // This will publish the word 'localhost' on topic devices/my-device/config/http/host
-  return bus.Publish('configUpdated', { deviceId: 'my-device', keys: [ 'http', 'host' ] }, 'localhost')
+  return bus.publish('configUpdated', { deviceId: 'my-device', keys: [ 'http', 'host' ] }, 'localhost')
 }).then(() => {
   console.log('update published')
 
