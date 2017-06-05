@@ -112,6 +112,16 @@ Creates a new Bus instance.
 * `clientId`: The instance's client ID
 * `url`: The broker URL (e.g. `mqtt://localhost:3306`)
 * `opts`: MQTT.js options (see [here](https://github.com/mqttjs/MQTT.js#client))
+  * `clientId` is **always** overwritten by the Id given as the first parameter
+
+```ts
+import { Bus } from '@art-of-coding/bus'
+// or
+const Bus = require('@art-of-coding/bus')
+
+// create a Bus instance
+const bus = Bus.create('my-client-id', 'mqtt://localhost')
+```
 
 ------------------------------------------------
 
@@ -246,6 +256,14 @@ event emitters will work!
 ### bus.connect(): Promise<IConnackPacket>
 
 Connect to the broker.
+
+```ts
+bus.connect().then(() => {
+  console.log('connected!')
+}).catch(err => {
+  console.error(err)
+})
+```
 
 ------------------------------------------------
 
