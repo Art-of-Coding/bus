@@ -171,7 +171,7 @@ bus.onStatusChange(function (status: Status, error: Error) {
 ### bus.setPattern (label: string, pattern: string): Bus
 
 Set a topic pattern with the given label. When set, a `pattern` can be referenced
-by using is `label`. For more on topic patterns, [see the mqtt-regex readme](https://github.com/RangerMauve/mqtt-regex/blob/master/README.md#api).
+by using its `label`. For more on topic patterns, [see the mqtt-regex readme](https://github.com/RangerMauve/mqtt-regex/blob/master/README.md#api).
 
 * This method will throw if the label already exists or the pattern is invalid
 * This method returns the bus instance, so calls can be chained
@@ -188,7 +188,7 @@ Renoves a topic pattern with the given label.
 
 ------------------------------------------------
 
-<a name="on""</a>
+<a name="on"></a>
 ### bus.on (label: string, fn: (packet: IPacket) => void): Bus
 
 Add a listener for the given `label`. This listener is called each time a message
