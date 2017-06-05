@@ -6,6 +6,10 @@ the excellent [MQTT.js](https://github.com/mqttjs/MQTT.js) module.
 The module is written in [TypeScript](https://www.typescriptlang.org/) and has the
 required declaration files included. It can also be used in vanilla JS.
 
+> bus is currently in active development and breaking changes may be introduced
+> without warning! This will remain true at least as long as the module is in
+> alpha (e.g. 0.0.1-alpha.1)
+
 * [Install](#install)
 * [Example](#example)
 * [API](#api)
