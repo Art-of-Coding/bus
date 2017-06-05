@@ -117,7 +117,7 @@ Creates a new Bus instance.
 ```ts
 import { Bus } from '@art-of-coding/bus'
 // or
-const Bus = require('@art-of-coding/bus')
+const Bus = require('@art-of-coding/bus').Bus
 
 // create a Bus instance
 const bus = Bus.create('my-client-id', 'mqtt://localhost')
