@@ -297,7 +297,7 @@ bus.publish('myLabel', params, payload)
 
 ------------------------------------------------
 
-<a href="inspiredby"></a>
+<a name="inspiredby"></a>
 ## Inspired by
 
 - [MQTT.js](https://github.com/mqttjs/MQTT.js), which this module uses under the hood
