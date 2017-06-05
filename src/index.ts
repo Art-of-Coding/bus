@@ -368,17 +368,10 @@ export class Bus {
     this._client.on('error', err => { this._statusChanged(Status.ERROR, err) })
 
     this._client.on('message', (topic: string, message: string, packet: IPacket) => {
-      const getFirstChar = (obj: any) => {
-        if (Buffer.isBuffer(obj)) return obj.toString()[0]
-        return obj[0]
-      }
-
       packet.isJson = false
-      if ([ '{', '[' ].indexOf(getFirstChar(packet.payload)) !== -1) {
+      if ([ '{', '[' ].indexOf(packet.payload.toString()[0]) !== -1) {
         try {
-          packet.json = JSON.parse(Buffer.isBuffer(packet.payload)
-            ? packet.payload.toString()
-            : packet.payload)
+          packet.json = JSON.parse(packet.payload.toString())
           packet.isJson = true
         } catch (e) { }
       }
