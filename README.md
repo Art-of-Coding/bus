@@ -109,7 +109,7 @@ Creates a new Bus instance.
 
 * `clientId`: The instance's client ID
 * `url`: The broker URL (e.g. `mqtt://localhost:3306`)
-* `opts`: MQTT.js options (see [here(https://github.com/mqttjs/MQTT.js#client)])
+* `opts`: MQTT.js options (see [here](https://github.com/mqttjs/MQTT.js#client))
 
 ------------------------------------------------
 
