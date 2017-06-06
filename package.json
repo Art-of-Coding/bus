@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/Art-of-Coding/bus#readme",
   "dependencies": {
+    "@types/mqtt": "0.0.34",
     "@types/node": "^7.0.27",
-    "mqtt": "^2.8.1"
+    "mqtt": "^2.8.2"
   },
   "devDependencies": {
     "typescript": "^2.3.4"
