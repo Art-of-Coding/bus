@@ -190,6 +190,7 @@ by using its `label`. For more on topic patterns, [see the mqtt-regex readme](ht
 * `label`: The pattern's label
 * `pattern`: The topic pattern
 
+
 * This method will throw if the label already exists or the pattern is invalid
 * This method returns the bus instance, so calls can be chained
 
@@ -201,6 +202,7 @@ by using its `label`. For more on topic patterns, [see the mqtt-regex readme](ht
 Removes a topic pattern with the given label.
 
 * `label`: The label to remove
+
 
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
@@ -215,6 +217,7 @@ is received on a topic that matches the pattern accompanying the label.
 
 * `label`: The label
 * `fn`: The method to call
+
 
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
@@ -232,6 +235,7 @@ a message that matches the topic pattern is received, then it is removed.
 * `label`: The label
 * `fn`: The method to call
 
+
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
@@ -248,6 +252,7 @@ called.
 * `label`: The label
 * `fn`: The method to call
 
+
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
@@ -262,6 +267,7 @@ Removes all listeners. When `label` is set, only that label's listeners will be
 removed. Otherwise, all listeners (for all labels) will be removed.
 
 * `label`: The label
+
 
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
@@ -288,10 +294,10 @@ bus.connect().then(() => {
 <a name="end"></a>
 ### bus.end (force: boolean = false): Promise<null>
 
-* `force`: Don't wait for in-flight messages to be acked (default `false`)
-
 Closes the connection to the broker. If `force` is `true`, the connection will be
 closed without waiting for in-flight packages fo be acked.
+
+* `force`: Don't wait for in-flight messages to be acked (default `false`)
 
 ------------------------------------------------
 
@@ -309,11 +315,11 @@ Subscribe to the topic pattern identified by `label`.
 <a name="unsubscribe"></a>
 ### bus.unsubscribe (label: string, removeListeners: boolean = false): Promise<null>
 
-* `label`: The label to unsubscribe from
-* `removeListeners`: Remove all listeners for the label (default `false`)
-
 Unsubscribes from the topic patternn identified by `label`. If `removeListeners`
 is `true`, all added listeners for the label will be removed as well.
+
+* `label`: The label to unsubscribe from
+* `removeListeners`: Remove all listeners for the label (default `false`)
 
 ------------------------------------------------
 
