@@ -190,9 +190,17 @@ by using its `label`. For more on topic patterns, [see the mqtt-regex readme](ht
 * `label`: The pattern's label
 * `pattern`: The topic pattern
 
-
+Notes:
 * This method will throw if the label already exists or the pattern is invalid
 * This method returns the bus instance, so calls can be chained
+
+```ts
+// set a topic with a single named wildcard - `one`
+bus.setPattern('myLabel1', 'my/topic/+one')
+
+// set a topic with a multi named wildcard - `keys`
+bus.setPattern('myLabel2', 'my/topic/#keys')
+```
 
 ------------------------------------------------
 
@@ -203,7 +211,7 @@ Removes a topic pattern with the given label.
 
 * `label`: The label to remove
 
-
+Notes:
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
 
@@ -218,8 +226,8 @@ is received on a topic that matches the pattern accompanying the label.
 * `label`: The label
 * `fn`: The method to call
 
-
-* **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
+Notes:
+* bus is **not an EventEmitter**! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
@@ -235,8 +243,8 @@ a message that matches the topic pattern is received, then it is removed.
 * `label`: The label
 * `fn`: The method to call
 
-
-* **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
+Notes:
+* bus is **not an EventEmitter**! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
@@ -252,8 +260,8 @@ called.
 * `label`: The label
 * `fn`: The method to call
 
-
-* **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
+Notes:
+* bus is **not an EventEmitter**! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
@@ -268,8 +276,8 @@ removed. Otherwise, all listeners (for all labels) will be removed.
 
 * `label`: The label
 
-
-* **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
+Notes:
+* bus is **not an EventEmitter**! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
