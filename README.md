@@ -170,6 +170,8 @@ Is usually only available when `bus.getStatus()` returns `ERROR`.
 
 Set a method which will be called each time the bus's status changes.
 
+* `fn`: The method to call
+
 ```ts
 bus.onStatusChange(function (status: Status, error: Error) {
   const withOrWithout = error ? 'with' : 'without'
@@ -185,6 +187,9 @@ bus.onStatusChange(function (status: Status, error: Error) {
 Set a topic pattern with the given label. When set, a `pattern` can be referenced
 by using its `label`. For more on topic patterns, [see the mqtt-regex readme](https://github.com/RangerMauve/mqtt-regex/blob/master/README.md#api).
 
+* `label`: The pattern's label
+* `pattern`: The topic pattern
+
 * This method will throw if the label already exists or the pattern is invalid
 * This method returns the bus instance, so calls can be chained
 
@@ -194,6 +199,8 @@ by using its `label`. For more on topic patterns, [see the mqtt-regex readme](ht
 ### bus.removePattern (label: string): Bus
 
 Removes a topic pattern with the given label.
+
+* `label`: The label to remove
 
 * This method will throw if the label doesn't exist
 * This method returns the bus instance, so calls can be chained
@@ -205,6 +212,9 @@ Removes a topic pattern with the given label.
 
 Add a listener for the given `label`. This listener is called each time a message
 is received on a topic that matches the pattern accompanying the label.
+
+* `label`: The label
+* `fn`: The method to call
 
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
@@ -219,6 +229,9 @@ event emitters will work!
 Adds a once listener for the given `label`. The listener is called the next time
 a message that matches the topic pattern is received, then it is removed.
 
+* `label`: The label
+* `fn`: The method to call
+
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
@@ -232,6 +245,9 @@ event emitters will work!
 Removes the listener method for the given `label`. The method will no longer be
 called.
 
+* `label`: The label
+* `fn`: The method to call
+
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
 * This method will throw if the label doesn't exist
@@ -244,6 +260,8 @@ event emitters will work!
 
 Removes all listeners. When `label` is set, only that label's listeners will be
 removed. Otherwise, all listeners (for all labels) will be removed.
+
+* `label`: The label
 
 * **Note:** bus is _not an EventEmitter_! Therefore, not all methods for regular
 event emitters will work!
@@ -270,6 +288,8 @@ bus.connect().then(() => {
 <a name="end"></a>
 ### bus.end (force: boolean = false): Promise<null>
 
+* `force`: Don't wait for in-flight messages to be acked (default `false`)
+
 Closes the connection to the broker. If `force` is `true`, the connection will be
 closed without waiting for in-flight packages fo be acked.
 
@@ -280,13 +300,17 @@ closed without waiting for in-flight packages fo be acked.
 
 Subscribe to the topic pattern identified by `label`.
 
-`opts`:
- * `qos`: qos subscription level, (default `0`)
+* `label`: The label to subscribe to
+* `opts`:
+  * `qos`: qos subscription level, (default `0`)
 
 ------------------------------------------------
 
 <a name="unsubscribe"></a>
 ### bus.unsubscribe (label: string, removeListeners: boolean = false): Promise<null>
+
+* `label`: The label to unsubscribe from
+* `removeListeners`: Remove all listeners for the label (default `false`)
 
 Unsubscribes from the topic patternn identified by `label`. If `removeListeners`
 is `true`, all added listeners for the label will be removed as well.
@@ -299,10 +323,11 @@ is `true`, all added listeners for the label will be removed as well.
 Published the `payload` on the topic pattern identified by `label`, with the
 parameters `params`. If you have no parameters, use an empty object (`{}`) instead.
 
-`opts`:
- * `qos`: QoS level (default `0`)
- * `retain`: retain flag (default `false`)
- * `dup`: mark as duplicate (default `false`)
+* `label`: The label to publish to
+* `opts`:
+  * `qos`: QoS level (default `0`)
+  * `retain`: retain flag (default `false`)
+  * `dup`: mark as duplicate (default `false`)
 
 ```ts
 // Set a pattern `myLabel` with one parameter (`+name`)
