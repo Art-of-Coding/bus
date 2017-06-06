@@ -323,7 +323,7 @@ Subscribe to the topic pattern identified by `label`.
 <a name="unsubscribe"></a>
 ### bus.unsubscribe (label: string, removeListeners: boolean = false): Promise<null>
 
-Unsubscribes from the topic patternn identified by `label`. If `removeListeners`
+Unsubscribes from the topic pattern identified by `label`. If `removeListeners`
 is `true`, all added listeners for the label will be removed as well.
 
 * `label`: The label to unsubscribe from
@@ -337,11 +337,17 @@ is `true`, all added listeners for the label will be removed as well.
 Published the `payload` on the topic pattern identified by `label`, with the
 parameters `params`. If you have no parameters, use an empty object (`{}`) instead.
 
-* `label`: The label to publish to
+* `label`: The label to publish
+* `params`: The topic parameter values
+* `payload`: The payload to publish
 * `opts`:
   * `qos`: QoS level (default `0`)
   * `retain`: retain flag (default `false`)
   * `dup`: mark as duplicate (default `false`)
+
+Notes:
+ * `params` will usually be an object with keys corresponding to wildcard names
+ * `payload` automatically stringifies JSON and converts numbers to string
 
 ```ts
 // Set a pattern `myLabel` with one parameter (`+name`)
