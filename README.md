@@ -1,5 +1,10 @@
 # bus &nbsp;&nbsp; [![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/) [![npm](https://img.shields.io/npm/v/@art-of-coding/bus.svg)](https://www.npmjs.com/package/@art-of-coding/bus) [![npm](https://img.shields.io/npm/l/@art-of-coding/bus.svg)](https://www.npmjs.com/package/@art-of-coding/bus)
 
+
+**Note:** bus is **deprecated** and **no longer maintained!** Use [Eshu](https://github.com/Art-of-Coding/eshu) instead.
+
+------------------------------------------------
+
 **bus** provides a high-level way to work with MQTT. Under the hood it uses
 the excellent [MQTT.js](https://github.com/mqttjs/MQTT.js) module.
 

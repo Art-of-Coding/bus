@@ -1,6 +1,6 @@
 {
   "name": "@art-of-coding/bus",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "Fancy MQTT message bus manager ",
   "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
   "license": "MIT",
